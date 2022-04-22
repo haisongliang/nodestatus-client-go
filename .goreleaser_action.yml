@@ -17,7 +17,9 @@ builds:
       - amd64
       - mips
       - mipsle
-
+    goarm:
+      - 5
+      
   - id: darwin-amd64-build
     main: ./cmd/client
     env:
