@@ -19,32 +19,8 @@ builds:
       - mipsle
     goarm:
       - 5
-      
-  - id: darwin-amd64-build
-    main: ./cmd/client
-    env:
-      - CGO_ENABLED=1
-      - PKG_CONFIG_SYSROOT_DIR=/sysroot/macos/amd64
-      - PKG_CONFIG_PATH=/sysroot/macos/amd64/usr/local/lib/pkgconfig
-      - CC=o64-clang
-      - CXX=o64-clang++
-    goos:
-      - darwin
-    goarch:
-      - amd64
-
-  - id: darwin-arm64-build
-    main: ./cmd/client
-    env:
-      - CGO_ENABLED=1
-      - PKG_CONFIG_SYSROOT_DIR=/sysroot/macos/arm64
-      - PKG_CONFIG_PATH=/sysroot/macos/arm64/usr/local/lib/pkgconfig
-      - CC=o64-clang
-      - CXX=o64-clang++
-    goos:
-      - darwin
-    goarch:
-      - arm64
+    gomips:
+      - softfloat
 
 archives:
   - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
